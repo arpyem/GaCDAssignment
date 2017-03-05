@@ -134,6 +134,7 @@ dfSummary <- df2 %>%
         slice_rows(c("subject", "activity")) %>%
         dmap(.f = function(x) mean(as.numeric(x)))
 
-# Write .csv file containing summarized data
+# Write .txt file containing summarized data
 
-write_csv(x = dfSummary, path = file.path(getwd(), "data", "UCI HAR Dataset", "summary.csv"))
+# write_csv(x = dfSummary, path = file.path(getwd(), "data", "UCI HAR Dataset", "summary.csv")) # if you prefer .csv like me
+write.table(x = dfSummary, file = file.path(getwd(), "data", "UCI HAR Dataset", "summary.txt"), row.names = FALSE)
