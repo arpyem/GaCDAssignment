@@ -120,7 +120,7 @@ df2$activity <- factor(x = df2$activity, levels = activities$level, labels = act
 
 # 4. Descriptive variable names in the data
 
-# already did this
+colnames(df2) <- c("subject", "activity", as.character(features$variable[meanStdOnly]), "source")
 
 
 # 5. Create a separate summary dataset using the tidy data
